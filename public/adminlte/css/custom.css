@@ -1,0 +1,97 @@
+/* Custom Theme Colors */
+:root {
+    --primary: #E2E9C0;
+    --primary-dark: #EEE6D8;
+    --primary-light: #B6BEC2;
+}
+
+/* Sidebar Styling */
+.app-sidebar {
+    background-color: var(--primary) !important;
+}
+
+/* Menu Items */
+.nav-sidebar .nav-item > .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Hover Effect */
+.nav-sidebar .nav-item > .nav-link:hover {
+    background-color: var(--primary-dark) !important;
+    color: #fff !important;
+}
+
+/* Active Item */
+.nav-sidebar .nav-item > .nav-link.active {
+    background-color: var(--primary-dark) !important;
+    color: #fff !important;
+    border-left: 3px solid #fff !important;
+}
+
+/* Dropdown Menu */
+.nav-sidebar .nav-treeview {
+    background-color: var(--primary-light) !important;
+}
+
+/* Sidebar Header */
+.sidebar .user-panel {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Top Navigation Bar */
+.app-header {
+    background-color: var(--primary) !important;
+    border-bottom: 1px solid var(--primary-dark) !important;
+}
+
+/* Top Bar Links */
+.navbar-nav .nav-link i {
+    color: #000 !important;
+}
+
+/* Icons in Top Bar */
+.navbar-nav .bi {
+    color: #000 !important;
+}
+
+/* Active State in Top Bar */
+.navbar-nav .nav-item.active > .nav-link {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Dropdown Menus in Top Bar */
+.dropdown-menu {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    color: #212529;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #16181b;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-body h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+canvas {
+    min-height: 200px;
+}
