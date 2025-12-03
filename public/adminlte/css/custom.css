@@ -1,0 +1,307 @@
+/* Custom Theme Colors */
+:root {
+    --primary: #E2E9C0;
+    --primary-dark: #EEE6D8;
+    --primary-light: #B6BEC2;
+    --swiper-theme-color: #E2E9C0;
+    --swiper-navigation-size: 24px;
+}
+
+/* Sidebar Styling */
+.app-sidebar {
+    background-color: var(--primary) !important;
+}
+
+/* Menu Items */
+.nav-sidebar .nav-item > .nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Hover Effect */
+.nav-sidebar .nav-item > .nav-link:hover {
+    background-color: var(--primary-dark) !important;
+    color: #fff !important;
+}
+
+/* Active Item */
+.nav-sidebar .nav-item > .nav-link.active {
+    background-color: var(--primary-dark) !important;
+    color: #fff !important;
+    border-left: 3px solid #fff !important;
+}
+
+/* Dropdown Menu */
+.nav-sidebar .nav-treeview {
+    background-color: var(--primary-light) !important;
+}
+
+/* Sidebar Header */
+.sidebar .user-panel {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Top Navigation Bar */
+.app-header {
+    background-color: var(--primary) !important;
+    border-bottom: 1px solid var(--primary-dark) !important;
+}
+
+/* Top Bar Links */
+.navbar-nav .nav-link i {
+    color: #000 !important;
+}
+
+/* ========================
+   Swiper Carousel Styles
+   ======================== */
+/* Conteneur principal du Swiper */
+.hebergements-swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Style des slides */
+.hebergements-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Style des boutons de navigation */
+#hebergements .swiper-button-next,
+#hebergements .swiper-button-prev {
+    color: var(--primary);
+    background: rgba(255, 255, 255, 0.8);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#hebergements .swiper-button-next:hover,
+#hebergements .swiper-button-prev:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* Position des boutons */
+#hebergements .swiper-button-prev {
+    left: 30px;
+}
+
+#hebergements .swiper-button-next {
+    right: 30px;
+}
+
+/* Style de la pagination */
+#hebergements .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+#hebergements .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    opacity: 0.5;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+#hebergements .swiper-pagination-bullet-active {
+    background: var(--primary);
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Style pour les cartes d'hébergement */
+.overlay-card-hebergement {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid var(--primary);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* Styles pour les images des hébergements */
+.hebergement-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.hebergement-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ajustement pour le conteneur du swiper */
+#hebergements .hebergements-swiper {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+}
+
+/* Ajustement pour les slides */
+#hebergements .swiper-slide {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajustement pour le contenu des slides */
+#hebergements .hebergement-hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+}
+
+/* Ajustement pour la carte de contenu */
+#hebergements .overlay-card-hebergement {
+    position: relative;
+    z-index: 10;
+    margin-right: 5%;
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+/* Style pour les étoiles de notation */
+.rating-stars {
+    color: #fbbf24;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Style pour les badges */
+.hotel-badge {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #1f2937;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Style pour le prix */
+.price-tag {
+    background-color: #d1fae5;
+    color: #065f46;
+    font-weight: 700;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Ajustement pour les écrans mobiles */
+@media (max-width: 768px) {
+    .hebergement-hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+    
+    #hebergements .overlay-card-hebergement {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .price-tag {
+        font-size: 1rem;
+        padding: 0.4rem 1rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hebergements-swiper .swiper-slide {
+        min-height: 400px;
+    }
+    
+    .overlay-card-hebergement {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    #hebergements .swiper-button-next,
+    #hebergements .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Icons in Top Bar */
+.navbar-nav .bi {
+    color: #000 !important;
+}
+
+/* Active State in Top Bar */
+.navbar-nav .nav-item.active > .nav-link {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Dropdown Menus in Top Bar */
+.dropdown-menu {
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+}
+
+/* Dropdown Items */
+.dropdown-item {
+    color: #212529;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #16181b;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card-body h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+canvas {
+    min-height: 200px;
+}
