@@ -694,10 +694,10 @@
                 Contactez-nous pour planifier votre voyage inoubliable à travers notre riche patrimoine culturel et naturel.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="../app_php/pages/contact.php" class="px-8 py-4 bg-black-600 hover:bg-black-700 border-2 border-black-600 text-black hover:bg-black-600 hover:text-black font-medium rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                <a href="{{route('contact')}}" class="px-8 py-4 bg-black-600 hover:bg-black-700 border-2 border-black-600 text-black hover:bg-black-600 hover:text-black font-medium rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                     <i class="fas fa-phone-alt mr-2"></i> Nous Appeler
                 </a>
-                <a href="../app_php/pages/contact.php" class="px-8 py-4 bg-black-600 hover:bg-black-700 border-2 border-black-600 text-black hover:bg-black-600 hover:text-black font-medium rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
+                <a href="{{route('contact')}}" class="px-8 py-4 bg-black-600 hover:bg-black-700 border-2 border-black-600 text-black hover:bg-black-600 hover:text-black font-medium rounded-full transition-all duration-300 transform hover:scale-105 flex items-center justify-center">
                     <i class="fas fa-envelope mr-2"></i> Envoyer un Email
                 </a>
             </div>

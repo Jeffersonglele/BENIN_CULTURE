@@ -2,3 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 @import "index.css";
+
+/* Styles pour les régions de la carte */
+#mapContainer path {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Style pour la région active */
+#mapContainer path.active {
+    fill: #FFC800 !important;
+    stroke: #a88500;
+    filter: drop-shadow(0 6px 10px rgba(255, 199, 0, 0.6));
+    transform: scale(1.01);
+    z-index: 10;
+}
+
+/* Effet de survol pour les régions non actives */
+#mapContainer path:not(.active):hover {
+    fill: #E2E9C0;
+    transform: scale(1.01);
+    z-index: 5;
+}
+
+/* Styles pour les flèches de navigation Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff;
+    transition: color 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #d1d5db; /* Couleur gris clair au survol */
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Ajustement de la position des flèches */
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+/* Ajustement pour les écrans mobiles */
+@media (max-width: 768px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 1.25rem;
+    }
+}

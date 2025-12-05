@@ -569,13 +569,6 @@ document.addEventListener('DOMContentLoaded', function () {
             showError('Veuillez remplir tous les champs obligatoires');
             return false;
         }
-        
-        // Montant fixe pour le moment (1000 FCFA)
-        const amount = 1000; // Montant en centimes (10.00 FCFA)
-        const description = 'Paiement pour l\'ajout de contenu média';
-        
-        // Lancer le processus de paiement
-        processPayment(amount, description);
     });
     
     // Gérer la validation des champs en temps réel
