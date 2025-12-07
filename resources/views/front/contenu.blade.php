@@ -139,10 +139,10 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach ($contenu->medias as $media)
                             @php
-                                use Illuminate\Support\Str;
                                 $extension = pathinfo($media->chemin, PATHINFO_EXTENSION);
                                 $isImage = in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
                                 $isVideo = in_array($extension, ['mp4', 'webm', 'ogg']);
+                                $filename = \Illuminate\Support\Str::slug($media->chemin);
                             @endphp
 
                             <div class="rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
@@ -160,15 +160,37 @@
 
                                 {{-- VIDEO --}}
                                 @if($isVideo)
-                                    <div class="overflow-hidden">
-                                        <video controls class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
-                                            @if(Str::startsWith($media->chemin, 'storage/'))
-                                                <source src="{{ asset($media->chemin) }}" type="video/{{ $extension }}">
-                                            @else
-                                                <source src="{{ asset('storage/'.$media->chemin) }}" type="video/{{ $extension }}">
-                                            @endif
-                                        </video>
-                                    </div>
+                                    @php
+                                        // Construction des chemins
+                                        $storagePath = 'storage/app/public/' . $media->chemin;
+                                        $publicPath = 'storage/' . $media->chemin;
+                                        
+                                        // Vérification de l'existence du fichier
+                                        $fullPath = storage_path('app/public/' . $media->chemin);
+                                        $fileExists = file_exists($fullPath);
+                                        
+                                        // Debug: Afficher les chemins (à décommenter si nécessaire)
+                                        // echo "Chemin de stockage : " . $storagePath . "<br>";
+                                        // echo "Chemin public : " . $publicPath . "<br>";
+                                        // echo "Chemin complet : " . $fullPath . "<br>";
+                                        // echo "Le fichier existe : " . ($fileExists ? 'Oui' : 'Non') . "<br>";
+                                    @endphp
+                                    
+                                    @if($fileExists)
+                                        <div class="overflow-hidden">
+                                            <video controls class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
+                                                <source src="{{ asset($publicPath) }}" type="video/mp4" codecs="avc1.42E01E, mp4a.40.2">
+                                                Votre navigateur ne supporte pas la lecture de vidéos.
+                                            </video>
+                                        </div>
+                                    @else
+                                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                                            <strong>Erreur :</strong> La vidéo n'a pas pu être chargée. Fichier introuvable : {{ $media->chemin }}
+                                            <div class="text-xs mt-1">
+                                                Chemin recherché : {{ $fullPath }}
+                                            </div>
+                                        </div>
+                                    @endif
                                 @endif
 
                             </div>
