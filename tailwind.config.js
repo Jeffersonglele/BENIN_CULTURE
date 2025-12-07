@@ -14,6 +14,15 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            keyframes: {
+                fadeLeft: {
+                    '0%': { opacity: 0, transform: 'translateX(-30px)' },
+                    '100%': { opacity: 1, transform: 'translateX(0)' },
+                },
+            },
+            animation: {
+                fadeLeft: 'fadeLeft 1s ease-out forwards',
+            },
         },
     },
 

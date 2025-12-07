@@ -139,7 +139,8 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         @foreach ($contenu->medias as $media)
                             @php
-                                $extension = strtolower(pathinfo($media->chemin, PATHINFO_EXTENSION));
+                                use Illuminate\Support\Str;
+                                $extension = pathinfo($media->chemin, PATHINFO_EXTENSION);
                                 $isImage = in_array($extension, ['jpg', 'jpeg', 'png', 'gif', 'webp']);
                                 $isVideo = in_array($extension, ['mp4', 'webm', 'ogg']);
                             @endphp
@@ -161,7 +162,11 @@
                                 @if($isVideo)
                                     <div class="overflow-hidden">
                                         <video controls class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300">
-                                            <source src="{{ asset('storage/'.$media->chemin) }}" type="video/{{ $extension }}">
+                                            @if(Str::startsWith($media->chemin, 'storage/'))
+                                                <source src="{{ asset($media->chemin) }}" type="video/{{ $extension }}">
+                                            @else
+                                                <source src="{{ asset('storage/'.$media->chemin) }}" type="video/{{ $extension }}">
+                                            @endif
                                         </video>
                                     </div>
                                 @endif
@@ -675,6 +680,8 @@
             });
         });
     </script>
+    <x-footer/>
+
 
 </body>
 </html>

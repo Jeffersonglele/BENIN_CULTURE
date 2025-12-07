@@ -427,10 +427,6 @@
                             Le Bénin, terre d'une culture riche et d'un art vibrant, est une destination idéale 
                             pour les voyageurs en quête de découvertes authentiques et inspirantes.
                         </p>
-                        <div class="flex items-center justify-center text-[#E2E9C0] font-semibold">
-                            <span>Découvrir</span>
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </div>
                     </div>
                     <div class="bg-gradient-to-r from-[#E2E9C0]/20 to-transparent h-1.5 w-full"></div>
                 </div>
@@ -446,10 +442,6 @@
                             Découvrez l'accueil chaleureux des Béninois, réputé dans toute l'Afrique de l'Ouest, 
                             qui fera de votre séjour une expérience humaine inoubliable.
                         </p>
-                        <div class="flex items-center justify-center text-[#E2E9C0] font-semibold">
-                            <span>Rencontrer</span>
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </div>
                     </div>
                     <div class="bg-gradient-to-r from-[#E2E9C0]/20 to-transparent h-1.5 w-full"></div>
                 </div>
@@ -465,10 +457,6 @@
                             Le Bénin offre une grande variété de paysages, une destination parfaite 
                             pour les voyageurs en quête de diversité et d'aventures inoubliables.
                         </p>
-                        <div class="flex items-center justify-center text-[#E2E9C0] font-semibold">
-                            <span>Explorer</span>
-                            <i class="fas fa-arrow-right ml-2"></i>
-                        </div>
                     </div>
                     <div class="bg-gradient-to-r from-[#E2E9C0]/20 to-transparent h-1.5 w-full"></div>
                 </div>
@@ -681,10 +669,7 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Pâte d'Igname</h3>
                         <p class="text-gray-300 mb-4">Plat traditionnel à base d'igname pilée, servi avec des sauces variées</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-yellow-400 font-semibold">⭐ Plat National</span>
-                            <span class="culture-badge text-sm">Populaire</span>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -696,10 +681,6 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Akassa</h3>
                         <p class="text-gray-300 mb-4">Bouillie de maïs fermenté, souvent accompagnée de sauce gombo</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-yellow-400 font-semibold">⭐ Spécialité</span>
-                            <span class="culture-badge text-sm">Traditionnel</span>
-                        </div>
                     </div>
                 </div>
 
@@ -711,10 +692,6 @@
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-white mb-2">Atassi</h3>
                         <p class="text-gray-300 mb-4">Mélange esquis de riz + Haricot + Friture</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-yellow-400 font-semibold">⭐ Festif</span>
-                            <span class="culture-badge text-sm">Moderne</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -766,9 +743,6 @@
                                         </span>
                                         <span class="text-gray-700 font-semibold">4.9/5</span>
                                     </div>
-                                    <div class="bg-yellow-500 text-white px-4 py-2 rounded-full font-bold">
-                                        À partir de 120.000 FCFA
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -816,9 +790,7 @@
                                         </span>
                                         <span class="text-gray-700 font-semibold">4.7/5</span>
                                     </div>
-                                    <div class="bg-yellow-500 text-white px-4 py-2 rounded-full font-bold">
-                                        À partir de 85.000 FCFA
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -865,9 +837,6 @@
                                             <i class="far fa-star"></i>
                                         </span>
                                         <span class="text-gray-700 font-semibold">4.5/5</span>
-                                    </div>
-                                    <div class="bg-yellow-500 text-white px-4 py-2 rounded-full font-bold">
-                                        À partir de 45.000 FCFA
                                     </div>
                                 </div>
                             </div>
@@ -1018,5 +987,7 @@
             observer.observe(el);
         });
     </script>
+    <x-footer/>
+
 </body>
 </html>

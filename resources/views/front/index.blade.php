@@ -761,7 +761,7 @@
         });
     </script>
 
-<!--?php include('includes/footer.php'); ? -->
+<x-footer/>
 
 </body>
 </html>

@@ -47,15 +47,18 @@ Route::get('/dashboard/culture', [App\Http\Controllers\HomeController::class, 'i
 
 Route::get('/langue', [LangueController::class, 'index'])->name('langue');
 
-Route::get('contenu', [ShowContenuController::class, 'index'])->name('contenu');
+Route::get('/contenu', [ShowContenuController::class, 'index'])->name('contenu');
 
-Route::get('region', [RegionshowController::class, 'index'])->name('region');
-Route::get('contact', function () {
+Route::get('/region', [RegionshowController::class, 'index'])->name('region');
+Route::get('/contact', function () {
     return view('front.contact');
 })->name('contact');
-Route::get('tourisme', function () {
+Route::get('/tourisme', function () {
     return view('front.tourisme');
 })->name('tourisme');
+Route::get('/a_propos', function () {
+    return view('front.propos');
+})->name('propos');
 
 Route::get('/contenu/{id}', [ContenuController::class, 'voir'])
     ->middleware(['auth', 'verifierpaiement'])

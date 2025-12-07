@@ -478,5 +478,7 @@
             }, 1500);
         });
     </script>
+    <x-footer/>
+
 </body>
 </html>

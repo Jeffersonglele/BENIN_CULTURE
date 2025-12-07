@@ -1,4 +1,27 @@
 import './bootstrap';
+import Typed from 'typed.js';
+
+// Initialisation de Typed.js
+document.addEventListener('DOMContentLoaded', function() {
+    const typedElements = document.querySelectorAll('.typed-text');
+    
+    typedElements.forEach(element => {
+        const strings = JSON.parse(element.getAttribute('data-typed-items') || '[]');
+        
+        if (strings.length > 0) {
+            new Typed(element, {
+                strings: strings,
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|',
+                autoInsertCss: true
+            });
+        }
+    });
+});
 import Alpine from 'alpinejs';
 import Swiper, { Navigation } from 'swiper';
 import 'swiper/css';

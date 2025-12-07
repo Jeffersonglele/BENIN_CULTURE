@@ -10,6 +10,8 @@
         <!-- Menu Desktop -->
         <ul class="hidden md:flex space-x-10 text-white text-lg font-semibold items-center">
 
+            <li><a href="{{ route('home') }}">Accueil</a></li>
+
             <!-- Culture + dropdown -->
             <li class="relative group">
                 <button class="flex items-center hover:text-yellow-300 duration-200">
@@ -22,9 +24,9 @@
                 </button>
 
                 <!-- Sous-menu -->
-                <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md 
-                           opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                           transition-all duration-300 pt-2 pb-2 pointer-events-auto">
+                <ul  class="motion-dropdown absolute left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                    transition-all duration-300 pt-2 pb-2 pointer-events-auto">
                     <li><a href="{{ route('langue') }}" class="block px-4 py-2 hover:bg-gray-100">Langue</a></li>
                     <li><a href="{{ route('region') }}" class="block px-4 py-2 hover:bg-gray-100">Régions</a></li>
                     <li><a href="{{ route('contenu') }}" class="block px-4 py-2 hover:bg-gray-100">Contenus</a></li>
@@ -33,6 +35,7 @@
 
             <li><a href="{{ route('tourisme') }}" class="hover:text-yellow-300 duration-200">Tourisme</a></li>
             <li><a href="{{ route('contact') }}" class="hover:text-yellow-300 duration-200">Contact</a></li>
+            <!--li><a href="{{ route('propos') }}" class="hover:text-yellow-300 duration-200">A Propos</a></li-->
 
             <!-- Utilisateur -->
             <li class="relative group">
@@ -46,9 +49,9 @@
                     @endauth
                 </div>
 
-                <ul class="absolute right-0 mt-2 w-40 bg-white text-gray-800 shadow-lg rounded-md 
-                           opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                           transition-all duration-300 pt-2 pb-2">
+                <ul  class="motion-dropdown absolute left-0 mt-2 w-48 bg-white text-gray-800 shadow-lg rounded-md 
+                    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                    transition-all duration-300 pt-2 pb-2 pointer-events-auto">
                     @guest
                         <li><a href="{{ route('author.login') }}" class="block px-4 py-2 hover:bg-gray-100">Log In</a></li>
                     @endguest
@@ -104,6 +107,7 @@
 
 </nav>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -116,4 +120,32 @@
         const menu = document.getElementById(id);
         menu.classList.toggle('hidden');
     }
+    // Animation Motion-style pour les dropdowns
+    document.querySelectorAll('.group').forEach(group => {
+        const dropdown = group.querySelector('.motion-dropdown');
+
+        if (!dropdown) return;
+
+        group.addEventListener('mouseenter', () => {
+            anime({
+                targets: dropdown,
+                opacity: [0, 1],
+                translateY: [-10, 0],
+                scale: [0.97, 1],
+                easing: "spring(1, 80, 10, 0)",
+                duration: 250
+            });
+        });
+
+        group.addEventListener('mouseleave', () => {
+            anime({
+                targets: dropdown,
+                opacity: [1, 0],
+                translateY: [0, -10],
+                scale: [1, 0.97],
+                easing: "easeOutQuad",
+                duration: 200
+            });
+        });
+    });
 </script>
